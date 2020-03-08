@@ -21,11 +21,11 @@ export default class Navbar extends Component {
             </ul>     
             <nav>
                 <div className="nav-wrapper">
-                    <a className="kimscosmetics" className="right brand-logo"> <Link to="/about">KIM'S COSMETICS</Link></a>
+                    <a style={{paddding:"50px"}} className="right brand-logo kimscosmetics"> <Link to="/about">KIM'S COSMETICS</Link></a>
                     <ul id="nav-mobile" className="left hide-on-med-and-down">
                         <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Products<i className="material-icons right">arrow_drop_down</i></a></li>
-                            <li><Link to='/contact'>CONTACT/LOCATION</Link></li>
-                            <li><Link to="/about">ABOUT</Link></li>
+                            <li><Link to='/contact'>Contact/Location</Link></li>
+                            <li><Link to="/about">About</Link></li>
                     </ul>
                 </div>
             </nav>
