@@ -29,6 +29,7 @@ const BtnContainer = styled.div`
 `
 
 export default function About() {
+
     return (
        
        
@@ -37,7 +38,7 @@ export default function About() {
             <Paper elevation={3} style={{backgroundColor: "#FFF5EE"}} >
             <Title>Family Owned Since 1998</Title>
             <Body>  Located in Chinatown, our store boasts a broad array of the best Japanese & Korean cosmetics. We have an eccentric collection of some of the most noteworthy and remarkable beauty products. We carry the ever coveted line of cosmetics from Shisiedo, to other well known brands such as NOEVIR & Menard. Come see our unique selection to meet your beauty needs. Certain brands are available in store only. </Body>
-            <Body>Additionally, we carry a moderate collection of toys from Sanrio. Most popularly known for Hello Kitty, Pompompurin, My Melody, Gudetama, & More! Lastly, we also have a large assortment of health supplements to aid in beauty, health, and general well being. Fucoidan from japan being our most popular supplement and many more from Umeken!</Body>
+            <Body>Additionally, we carry a moderate collection of toys from Sanrio. Most popularly known for Hello Kitty, Pompompurin, My Melody, Gudetama, & More! Lastly, we also have a large assortment of herbal supplements to aid in beauty, health, and general well being. Fucoidan from japan being our most popular supplement and many more from Umeken!</Body>
             </Paper>
             <BtnContainer>
                 <Button style={{marginRight: "10px"}}href="tel:281-575-9458" variant="contained">
