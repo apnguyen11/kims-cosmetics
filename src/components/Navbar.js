@@ -24,7 +24,7 @@ export default class Navbar extends Component {
                     <a style={{paddding:"50px"}} className="right brand-logo kimscosmetics"> <Link to="/about">KIM'S COSMETICS  <img style={{height: "50px", paddingLeft: "7px", paddingTop: "20px", marginBottom: "-3px"}} src="https://firebasestorage.googleapis.com/v0/b/portfolio-65fd5.appspot.com/o/cosmetics.svg?alt=media&token=93abf30b-3453-4dc1-9e15-3cc00d341785"></img></Link></a>
                     <ul id="nav-mobile" className="left hide-on-med-and-down">
                         <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Products<i className="material-icons right">arrow_drop_down</i></a></li>
-                            <li><Link to='/contact'>Contact/Location</Link></li>
+                            <li><Link to='/contact'>Location/Hours</Link></li>
                             <li><Link to="/about">About</Link></li>
                     </ul>
                 </div>
