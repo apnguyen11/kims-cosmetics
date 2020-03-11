@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Carousel } from 'react-materialize';
 import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -52,26 +53,25 @@ export default function Herbal() {
                     />
                 </Card>
             </Grid>
-            <Grid item xs={12}>
-                <Paper className={classes.paper}>
-                <h1>Health Supplements</h1>
-                </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-                <Paper className={classes.paper}>xs=12 sm=6</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
+            
+                <Grid item xs={12}>
+                    <Paper className={classes.paper} style={{display: "flex"}}>
+                        <div style={{paddingRight: "1%", margin: "3%"}}>
+                            <h5>Health Supplements & Medicated Oils</h5>
+                            <p>Our collection of herbal supplements range from beauty remedies to daily health supplements.
+                               We carry the ever popular after Fucoidan, which is sought after for its immune boosting properties. All of our fucoidan is made in Japan and is of the strictest and most high quality. Additionally, we also carry many products from Umeken, a very well known brand for creating products that boost skin quality, digestive health, and many other health needs. Lastly, we have a large quantity of medicated oils. Eagle brand being the most popular and many more! Come and see us for the best price and best variety. Gifts are usually offered with large purchases upon request.
+                            </p>
+                            <p><b>Supplements may be shipped via call-in order!</b></p>
+                            <Button style={{marginRight: "10px"}}href="tel:281-575-9458" variant="contained">
+                                Call Now
+                                <img style={{height: "17px", paddingLeft: "10px", marginRight: "-3px"}} src="https://firebasestorage.googleapis.com/v0/b/portfolio-65fd5.appspot.com/o/phone.svg?alt=media&token=7d128812-ea00-478e-9cc5-3fb019e75b88"></img>
+                            </Button>
+                        </div>
+                        <div style={{paddingRight: "1%"}}>  <img src="https://firebasestorage.googleapis.com/v0/b/final-portfolio-637e0.appspot.com/o/tim-foster-3wAPJB57w6s-unsplash.jpg?alt=media&token=0e17aaef-b236-407e-9d2b-0ab8c7430065" style={{maxHeight: "400px", height: "100%"}}/></div>
+                           
+                      
+                    </Paper>
+                </Grid>
             </Grid>
         </div>
     )
