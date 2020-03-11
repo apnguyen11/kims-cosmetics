@@ -15,7 +15,7 @@ export default class Navbar extends Component {
             <ul id="dropdown1" className="dropdown-content">
                 <li href="#!"><Link to="/cosmetics">Cosmetics</Link></li>
                 <li className="divider"></li>
-                <li href="#!"><Link to="/herbal">Herbal Supplements</Link></li>
+                <li href="#!"><Link to="/herbal">Health Supplements</Link></li>
                 <li className="divider"></li>
                 <li href="#!"><Link to="/toys"> Toys</Link></li>
             </ul>     

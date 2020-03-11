@@ -12,8 +12,6 @@ import { fadeIn, fadeInRight } from 'react-animations';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import PhoneIcon from '@material-ui/icons/Phone';
-import { Link } from 'react-router-dom'
-
 
 const Background = styled.div`
     background: #FFF0F5;
@@ -22,19 +20,36 @@ const Background = styled.div`
     border-bottom: 1px solid black;
  
 `
-const fadeAnimation = keyframes`${fadeIn}`;
+const fadeAnimation = keyframes`${fadeIn}`
 const MapContainer = styled.div`
     height: 500px;
     width: 100%;
     margin: auto;
     padding: 50px;
-    animation: 2s ${fadeAnimation}
+    animation: 2s ${fadeAnimation};
 `
 
 const Map = ReactMapboxGl({
     accessToken:
       'pk.eyJ1IjoiYXBuZ3V5ZW4xMSIsImEiOiJjazdrdnlpODYwMWQ1M2txNnBjMWtyYzA1In0.k9fVvRrET1Yo6Le1QGLlEg'
    
+  });
+
+  const MyButton = styled(({ color, ...other }) => <Button {...other} />)({
+  background: props =>
+    props.color === 'red'
+      ? 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
+      : 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+  border: 0,
+  borderRadius: 3,
+  boxShadow: props =>
+    props.color === 'red'
+      ? '0 3px 5px 2px rgba(255, 105, 135, .3)'
+      : '0 3px 5px 2px rgba(33, 203, 243, .3)',
+  color: 'white',
+  height: 48,
+  padding: '0 30px',
+  margin: 8,
   });
 
 
@@ -69,22 +84,6 @@ export default function Contact() {
       });
       const classes = useStyles();
 
-const MyButton = styled(({ color, ...other }) => <Button {...other} />)({
-  background: props =>
-    props.color === 'red'
-      ? 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
-      : 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-  border: 0,
-  borderRadius: 3,
-  boxShadow: props =>
-    props.color === 'red'
-      ? '0 3px 5px 2px rgba(255, 105, 135, .3)'
-      : '0 3px 5px 2px rgba(33, 203, 243, .3)',
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-  margin: 8,
-});
 
    
         return (
@@ -184,13 +183,13 @@ const MyButton = styled(({ color, ...other }) => <Button {...other} />)({
                 
 
                 <div style={{float: "left", paddingLeft: "6.25%"}}>
-                    <MyButton  href="https://www.instagram.com/kimscosmetics_gifts/?hl=en" color="red">
+                    <MyButton style={{padding: "0 30px", color: "white", margin: "8"}} href="https://www.instagram.com/kimscosmetics_gifts/?hl=en" color="red">
                             <InstagramIcon/> 
                     </MyButton>
-                    <MyButton href="https://www.facebook.com/Kims-Cosmetics-766034480241511/?   ref=aymt_homepage_panel&eid=ARAn7pI-dmdAy2jNM938y9NXodSFUwnbaf6QtZbWqpenVT_CRTJYh6_lwNmmFTKOLeZbs_IH3MFD4pur" color="red">
+                    <MyButton style={{padding: "0 30px", color: "white", margin: "8"}} href="https://www.facebook.com/Kims-Cosmetics-766034480241511/?   ref=aymt_homepage_panel&eid=ARAn7pI-dmdAy2jNM938y9NXodSFUwnbaf6QtZbWqpenVT_CRTJYh6_lwNmmFTKOLeZbs_IH3MFD4pur" color="red">
                         <FacebookIcon/>
                     </MyButton>
-                    <MyButton color="red" href="tel:281-575-9458">
+                    <MyButton style={{padding: "0 30px", color: "white", margin: "8"}} color="red" href="tel:281-575-9458">
                         <PhoneIcon/>
                     </MyButton>
                     
