@@ -9,7 +9,8 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    background: '#FFF0F5'
+    background: '#FFF0F5',
+    width: "100%"
   },
   paper: {
     padding: theme.spacing(2),
@@ -25,7 +26,7 @@ export default function Herbal() {
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
-            <Grid item xs={12} style={{height: "30%"}}>
+            <Grid item xs={12} style={{height: "30%", width: "100%"}}>
                 <Card className={classes.paper} style={{marginLeft: "15%", marginRight: "15%", marginTop: "4%"}} >
                     <Carousel style={{height: "50%", minHeight: "900px"}}
                     images={[
@@ -55,7 +56,7 @@ export default function Herbal() {
             </Grid>
             
                 <Grid item xs={12}>
-                    <Paper className={classes.paper} style={{display: "flex"}}>
+                    <Paper className={classes.paper} style={{display: "flex", marginTop: "6%"}}>
                         <div style={{paddingRight: "1%", margin: "3%"}}>
                             <h5>Health Supplements & Medicated Oils</h5>
                             <p>Our collection of herbal supplements range from beauty remedies to daily health supplements.
@@ -67,7 +68,7 @@ export default function Herbal() {
                                 <img style={{height: "17px", paddingLeft: "10px", marginRight: "-3px"}} src="https://firebasestorage.googleapis.com/v0/b/portfolio-65fd5.appspot.com/o/phone.svg?alt=media&token=7d128812-ea00-478e-9cc5-3fb019e75b88"></img>
                             </Button>
                         </div>
-                        <div style={{paddingRight: "1%"}}>  <img src="https://firebasestorage.googleapis.com/v0/b/final-portfolio-637e0.appspot.com/o/tim-foster-3wAPJB57w6s-unsplash.jpg?alt=media&token=0e17aaef-b236-407e-9d2b-0ab8c7430065" style={{maxHeight: "400px", height: "100%"}}/></div>
+                        <div style={{paddingRight: "1%"}}>  <img src="https://firebasestorage.googleapis.com/v0/b/final-portfolio-637e0.appspot.com/o/tim-foster-3wAPJB57w6s-unsplash.jpg?alt=media&token=0e17aaef-b236-407e-9d2b-0ab8c7430065" style={{maxHeight: "400px", height: "100%", width: "100%"}}/></div>
                            
                       
                     </Paper>

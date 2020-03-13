@@ -2,69 +2,119 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { Carousel } from 'react-materialize';
+import PropTypes from 'prop-types';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    background: '#FFF0F5'
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-   
-  },
-}));
+  function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <Typography
+        component="div"
+        role="tabpanel"
+        hidden={value !== index}
+        id={`vertical-tabpanel-${index}`}
+        aria-labelledby={`vertical-tab-${index}`}
+        {...other}
+      >
+        {value === index && <Box p={3}>{children}</Box>}
+      </Typography>
+    );
+  }
+  
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+  };
+  
+  function a11yProps(index) {
+    return {
+      id: `vertical-tab-${index}`,
+      'aria-controls': `vertical-tabpanel-${index}`,
+    };
+  }
+  
+  const useStyles = makeStyles(theme => ({
+    root: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.paper,
+      display: 'flex',
+      height: 1000,
+    },
+    tabs: {
+      borderRight: `1px solid ${theme.palette.divider}`,
+      background: "white",
+        "&$selected": {
+      background: "red"
+        }
+    },
+    same: {
+        height: 1000,
+    }
 
+    
+  }));
+  
 export default function Cosmetics() {
     const classes = useStyles();
+    const [value, setValue] = React.useState(0);
+  
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+  
     return (
-        <div className={classes.root}>
-            <Grid container spacing={3}>
-            <Grid item xs={12} sm={8}>
+        <div className={classes.same}>
+         
+           
                 <Paper className={classes.paper}>
-                    <Carousel
-                    images={[
-                        'https://picsum.photos/200/300?image=0',
-                        'https://picsum.photos/200/300?image=1',
-                        'https://picsum.photos/200/300?image=2',
-                        'https://picsum.photos/200/300?image=3',
-                        'https://picsum.photos/200/300?image=4'
-                    ]}
-                    options={{
-                        dist: -50,
-                        duration: 100,
-                        fullWidth: false,
-                        indicators: false,
-                        noWrap: false,
-                        numVisible: 5,
-                        onCycleTo: null,
-                        padding: 0,
-                        shift: 0
-                    }}
-                    />
+                <div className={classes.root}>
+      <Tabs
+        orientation="vertical"
+        variant="scrollable"
+        value={value}
+        onChange={handleChange}
+        aria-label="Vertical tabs example"
+        className={classes.tabs}
+      >
+        <Tab label="Shiseido" {...a11yProps(0)} />
+        <Tab label="Pola" {...a11yProps(1)} />
+        <Tab label="Noevir" {...a11yProps(2)} />
+        <Tab label="EV Princess" {...a11yProps(3)} />
+        <Tab label="Kileinei" {...a11yProps(4)} />
+        <Tab label="Obagi" {...a11yProps(5)} />
+        <Tab label="Menard" {...a11yProps(6)} />
+      </Tabs>
+      <TabPanel value={value} index={0} >
+      Shiseido
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+       Pola
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+      Noevir
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+      EV Princess
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+      Kileinei
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+      Obagi
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        Menard
+      </TabPanel>
+    </div>
+                
                 </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-                <Paper className={classes.paper}>xs=12 sm=6</Paper>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-                <Paper className={classes.paper}>xs=12 sm=6</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>xs=6 sm=3</Paper>
-            </Grid>
-            </Grid>
+            
+     
         </div>
     )
 }
